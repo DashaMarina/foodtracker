@@ -7,8 +7,11 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] != 1) {
     exit;
 }
 
-addDish($pdo, $_POST['place_id'], $_POST['name'], $_POST['price']);
-
-header("Location: dishes.php?place_id=" . $_POST['place_id']);
-exit;
-?>
+if (isset($_POST['add_dish'])) {
+    $place_id = $_POST['place_id'];
+    $dish_name = $_POST['name'];
+    $dish_price = $_POST['price'];
+    addDish($pdo, $place_id, $dish_name, $dish_price);
+    header("Location: dishes.php?place_id=" . $place_id);
+    exit;
+}

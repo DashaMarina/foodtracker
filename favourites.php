@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$favourites = getFavourites($pdo, $_SESSION['user_id']);
+$favourites = getFavouritesByUserId($pdo, $_SESSION['user_id']);
 
 include 'views/favourites.view.php';
 ?>

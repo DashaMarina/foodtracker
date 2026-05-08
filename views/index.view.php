@@ -16,12 +16,11 @@
                 <a class="nav-link" href="profile.php">👤 Профиль</a>
                 <a class="nav-link" href="favourites.php">💕 Избранное</a>
                 <?php if ($_SESSION['is_admin'] == 1): ?>
-                    <a class="nav-link" href="admin/places.php">Админка</a>
+                    <a class="nav-link" href="admin/places.php">Админ панель</a>
                 <?php endif; ?>
                 <a class="nav-link btn btn-outline-danger btn-sm ms-2" href="logout.php">Выйти</a>
             <?php else: ?>
                 <a class="nav-link" href="login.php">Вход</a>
-                <a class="nav-link" href="register.php">Регистрация</a>
             <?php endif; ?>
         </div>
     </div>
